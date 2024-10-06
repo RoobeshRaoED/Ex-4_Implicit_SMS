@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
 ## OUTPUT:
 
-![](1.png)
+<img src="1.png" width="400">
 
-![](2.png)
+<img src="2.png" width="400">
 
 ## RESULT:
 
