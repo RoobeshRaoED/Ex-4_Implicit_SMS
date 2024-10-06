@@ -1,6 +1,4 @@
-
 # Ex.No:4 Design an android application Send SMS using Intent.
-
 
 ## AIM:
 
@@ -27,17 +25,68 @@ Step 6: Send SMS and Display details give in MainActivity file.
 Step 7: Save and run the application.
 
 ## PROGRAM:
+### MainActivity.java:
 ```
-/*
-Program to create and design an android application Send SMS using Intent.
-Developed by:
-Registeration Number :
-*/
+package com.example.ex4;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button mbutton=(Button) findViewById(R.id.smsButton);
+        mbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms","9840155373",null));
+                intent.putExtra("sms_body","SMS using Intent");
+                startActivity(intent);
+            }
+        });
+
+    }
+}
+```
+### Activity_Main.XML:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/smsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="send sms"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
 ```
 
-## OUTPUT
+## OUTPUT:
 
+![](1.png)
 
+![](2.png)
 
-## RESULT
+## RESULT:
+
 Thus a Simple Android Application create and design an android application Send SMS using Intent using Android Studio is developed and executed successfully.
